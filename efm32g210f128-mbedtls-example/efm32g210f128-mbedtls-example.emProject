@@ -1,0 +1,264 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="efm32g210f128-mbedtls-example" target="8" version="2">
+  <project Name="efm32g210f128-mbedtls-example">
+    <configuration
+      Name="Common"
+      Target="EFM32G210F128"
+      arm_architecture="v7M"
+      arm_assembler_variant="clang"
+      arm_compiler_variant="clang"
+      arm_core_type="Cortex-M3"
+      arm_endian="Little"
+      arm_linker_heap_size="1024"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00020000;RAM;0x10000000;0x00004000"
+      arm_target_connect_with_reset="No"
+      c_preprocessor_definitions="EFM32G210F128=1"
+      c_user_include_directories=".;$(ProjectDir)/Application/inc;$(ProjectDir)/SDK/Device/SiliconLabs/EFM32G/Include;$(ProjectDir)/SDK/emlib/inc;$(ProjectDir)/SDK/emdrv/common/inc;$(ProjectDir)/SDK/CMSIS/Include;$(ProjectDir)/RTT;$(ProjectDir)/mbedTLS/include"
+      debug_target_connection="J-Link"
+      gcc_cplusplus_language_standard="c++11"
+      linker_memory_map_file="$(StudioDir)/samples/MemoryMap_CM.xml"
+      linker_memory_map_macros="FLASH_START=0x00000000;FLASH_SIZE=0x00020000;SRAM_START=0x20000000;SRAM_SIZE=0x00004000"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long long"
+      linker_printf_fp_enabled="Yes"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      macros="Target=EFM32G210F128"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="RTT">
+      <file file_name="RTT/SEGGER_RTT.c" />
+      <file file_name="RTT/SEGGER_RTT.h" />
+      <file file_name="RTT/SEGGER_RTT_Conf.h" />
+      <file file_name="RTT/SEGGER_RTT_SES.c" />
+      <configuration Name="Common" build_exclude_from_build="No" />
+    </folder>
+    <folder Name="Application">
+      <folder Name="inc">
+        <file file_name="Application/inc/ergo_config.h" />
+        <file file_name="Application/inc/timestamp.h" />
+      </folder>
+      <folder Name="src">
+        <file file_name="Application/src/main.c">
+          <configuration
+            Name="Release_Dogma"
+            arm_assembler_variant="gcc"
+            arm_compiler_variant="gcc"
+            gcc_optimization_level="Optimize For Size" />
+        </file>
+      </folder>
+    </folder>
+    <folder Name="Device">
+      <file file_name="SDK/Device/SiliconLabs/EFM32G/Source/system_efm32g.c" />
+      <file file_name="SDK/Device/SiliconLabs/EFM32G/Source/SES/startup_efm32g.s" />
+      <file file_name="SDK/Device/SiliconLabs/EFM32G/Source/SES/thumb_crt0.s" />
+    </folder>
+    <folder Name="emlib">
+      <file file_name="SDK/emlib/src/em_acmp.c" />
+      <file file_name="SDK/emlib/src/em_adc.c" />
+      <file file_name="SDK/emlib/src/em_aes.c" />
+      <file file_name="SDK/emlib/src/em_assert.c" />
+      <file file_name="SDK/emlib/src/em_burtc.c" />
+      <file file_name="SDK/emlib/src/em_cmu.c" />
+      <file file_name="SDK/emlib/src/em_cryotimer.c" />
+      <file file_name="SDK/emlib/src/em_crypto.c" />
+      <file file_name="SDK/emlib/src/em_dac.c" />
+      <file file_name="SDK/emlib/src/em_dbg.c" />
+      <file file_name="SDK/emlib/src/em_dma.c" />
+      <file file_name="SDK/emlib/src/em_ebi.c" />
+      <file file_name="SDK/emlib/src/em_emu.c" />
+      <file file_name="SDK/emlib/src/em_gpcrc.c" />
+      <file file_name="SDK/emlib/src/em_gpio.c" />
+      <file file_name="SDK/emlib/src/em_i2c.c" />
+      <file file_name="SDK/emlib/src/em_idac.c" />
+      <file file_name="SDK/emlib/src/em_int.c" />
+      <file file_name="SDK/emlib/src/em_lcd.c" />
+      <file file_name="SDK/emlib/src/em_ldma.c" />
+      <file file_name="SDK/emlib/src/em_lesense.c" />
+      <file file_name="SDK/emlib/src/em_letimer.c" />
+      <file file_name="SDK/emlib/src/em_leuart.c" />
+      <file file_name="SDK/emlib/src/em_mpu.c" />
+      <file file_name="SDK/emlib/src/em_msc.c" />
+      <file file_name="SDK/emlib/src/em_opamp.c" />
+      <file file_name="SDK/emlib/src/em_pcnt.c" />
+      <file file_name="SDK/emlib/src/em_prs.c" />
+      <file file_name="SDK/emlib/src/em_rmu.c" />
+      <file file_name="SDK/emlib/src/em_rtc.c" />
+      <file file_name="SDK/emlib/src/em_rtcc.c" />
+      <file file_name="SDK/emlib/src/em_system.c" />
+      <file file_name="SDK/emlib/src/em_timer.c" />
+      <file file_name="SDK/emlib/src/em_usart.c" />
+      <file file_name="SDK/emlib/src/em_vcmp.c" />
+      <file file_name="SDK/emlib/src/em_wdog.c" />
+    </folder>
+    <folder Name="mbedTLS">
+      <folder Name="inc">
+        <file file_name="mbedTLS/include/mbedtls/aes.h" />
+        <file file_name="mbedTLS/include/mbedtls/aesni.h" />
+        <file file_name="mbedTLS/include/mbedtls/arc4.h" />
+        <file file_name="mbedTLS/include/mbedtls/asn1.h" />
+        <file file_name="mbedTLS/include/mbedtls/asn1write.h" />
+        <file file_name="mbedTLS/include/mbedtls/base64.h" />
+        <file file_name="mbedTLS/include/mbedtls/bignum.h" />
+        <file file_name="mbedTLS/include/mbedtls/blowfish.h" />
+        <file file_name="mbedTLS/include/mbedtls/bn_mul.h" />
+        <file file_name="mbedTLS/include/mbedtls/camellia.h" />
+        <file file_name="mbedTLS/include/mbedtls/ccm.h" />
+        <file file_name="mbedTLS/include/mbedtls/certs.h" />
+        <file file_name="mbedTLS/include/mbedtls/check_config.h" />
+        <file file_name="mbedTLS/include/mbedtls/cipher.h" />
+        <file file_name="mbedTLS/include/mbedtls/cipher_internal.h" />
+        <file file_name="mbedTLS/include/mbedtls/compat-1.3.h" />
+        <file file_name="mbedTLS/include/mbedtls/config.h" />
+        <file file_name="mbedTLS/include/mbedtls/ctr_drbg.h" />
+        <file file_name="mbedTLS/include/mbedtls/debug.h" />
+        <file file_name="mbedTLS/include/mbedtls/des.h" />
+        <file file_name="mbedTLS/include/mbedtls/dhm.h" />
+        <file file_name="mbedTLS/include/mbedtls/ecdh.h" />
+        <file file_name="mbedTLS/include/mbedtls/ecdsa.h" />
+        <file file_name="mbedTLS/include/mbedtls/ecjpake.h" />
+        <file file_name="mbedTLS/include/mbedtls/ecp.h" />
+        <file file_name="mbedTLS/include/mbedtls/entropy.h" />
+        <file file_name="mbedTLS/include/mbedtls/entropy_poll.h" />
+        <file file_name="mbedTLS/include/mbedtls/error.h" />
+        <file file_name="mbedTLS/include/mbedtls/gcm.h" />
+        <file file_name="mbedTLS/include/mbedtls/havege.h" />
+        <file file_name="mbedTLS/include/mbedtls/hmac_drbg.h" />
+        <file file_name="mbedTLS/include/mbedtls/mbedTLS_config.h" />
+        <file file_name="mbedTLS/include/mbedtls/md.h" />
+        <file file_name="mbedTLS/include/mbedtls/md_internal.h" />
+        <file file_name="mbedTLS/include/mbedtls/md2.h" />
+        <file file_name="mbedTLS/include/mbedtls/md4.h" />
+        <file file_name="mbedTLS/include/mbedtls/md5.h" />
+        <file file_name="mbedTLS/include/mbedtls/memory_buffer_alloc.h" />
+        <file file_name="mbedTLS/include/mbedtls/net.h" />
+        <file file_name="mbedTLS/include/mbedtls/oid.h" />
+        <file file_name="mbedTLS/include/mbedtls/padlock.h" />
+        <file file_name="mbedTLS/include/mbedtls/pem.h" />
+        <file file_name="mbedTLS/include/mbedtls/pk.h" />
+        <file file_name="mbedTLS/include/mbedtls/pk_internal.h" />
+        <file file_name="mbedTLS/include/mbedtls/pkcs5.h" />
+        <file file_name="mbedTLS/include/mbedtls/pkcs11.h" />
+        <file file_name="mbedTLS/include/mbedtls/pkcs12.h" />
+        <file file_name="mbedTLS/include/mbedtls/platform.h" />
+        <file file_name="mbedTLS/include/mbedtls/ripemd160.h" />
+        <file file_name="mbedTLS/include/mbedtls/rsa.h" />
+        <file file_name="mbedTLS/include/mbedtls/sha1.h" />
+        <file file_name="mbedTLS/include/mbedtls/sha256.h" />
+        <file file_name="mbedTLS/include/mbedtls/sha512.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl_cache.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl_ciphersuites.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl_cookie.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl_internal.h" />
+        <file file_name="mbedTLS/include/mbedtls/ssl_ticket.h" />
+        <file file_name="mbedTLS/include/mbedtls/threading.h" />
+        <file file_name="mbedTLS/include/mbedtls/timing.h" />
+        <file file_name="mbedTLS/include/mbedtls/version.h" />
+        <file file_name="mbedTLS/include/mbedtls/x509.h" />
+        <file file_name="mbedTLS/include/mbedtls/x509_crl.h" />
+        <file file_name="mbedTLS/include/mbedtls/x509_crt.h" />
+        <file file_name="mbedTLS/include/mbedtls/x509_csr.h" />
+        <file file_name="mbedTLS/include/mbedtls/xtea.h" />
+      </folder>
+      <folder Name="src">
+        <file file_name="mbedTLS/library/aes.c">
+          <configuration Name="Release" build_exclude_from_build="No" />
+        </file>
+        <file file_name="mbedTLS/library/aesni.c" />
+        <file file_name="mbedTLS/library/arc4.c" />
+        <file file_name="mbedTLS/library/asn1parse.c" />
+        <file file_name="mbedTLS/library/asn1write.c" />
+        <file file_name="mbedTLS/library/base64.c" />
+        <file file_name="mbedTLS/library/bignum.c" />
+        <file file_name="mbedTLS/library/blowfish.c" />
+        <file file_name="mbedTLS/library/camellia.c" />
+        <file file_name="mbedTLS/library/ccm.c" />
+        <file file_name="mbedTLS/library/certs.c" />
+        <file file_name="mbedTLS/library/cipher.c" />
+        <file file_name="mbedTLS/library/cipher_wrap.c" />
+        <file file_name="mbedTLS/library/ctr_drbg.c" />
+        <file file_name="mbedTLS/library/debug.c" />
+        <file file_name="mbedTLS/library/des.c" />
+        <file file_name="mbedTLS/library/dhm.c" />
+        <file file_name="mbedTLS/library/ecdh.c" />
+        <file file_name="mbedTLS/library/ecdsa.c" />
+        <file file_name="mbedTLS/library/ecjpake.c" />
+        <file file_name="mbedTLS/library/ecp.c" />
+        <file file_name="mbedTLS/library/ecp_curves.c" />
+        <file file_name="mbedTLS/library/entropy.c" />
+        <file file_name="mbedTLS/library/entropy_poll.c" />
+        <file file_name="mbedTLS/library/error.c" />
+        <file file_name="mbedTLS/library/gcm.c" />
+        <file file_name="mbedTLS/library/havege.c" />
+        <file file_name="mbedTLS/library/hmac_drbg.c" />
+        <file file_name="mbedTLS/library/md.c" />
+        <file file_name="mbedTLS/library/md_wrap.c" />
+        <file file_name="mbedTLS/library/md2.c" />
+        <file file_name="mbedTLS/library/md4.c" />
+        <file file_name="mbedTLS/library/md5.c" />
+        <file file_name="mbedTLS/library/memory_buffer_alloc.c" />
+        <file file_name="mbedTLS/library/net.c" />
+        <file file_name="mbedTLS/library/oid.c" />
+        <file file_name="mbedTLS/library/padlock.c" />
+        <file file_name="mbedTLS/library/pem.c" />
+        <file file_name="mbedTLS/library/pk.c" />
+        <file file_name="mbedTLS/library/pk_wrap.c" />
+        <file file_name="mbedTLS/library/pkcs5.c" />
+        <file file_name="mbedTLS/library/pkcs11.c" />
+        <file file_name="mbedTLS/library/pkcs12.c" />
+        <file file_name="mbedTLS/library/pkparse.c" />
+        <file file_name="mbedTLS/library/pkwrite.c" />
+        <file file_name="mbedTLS/library/platform.c" />
+        <file file_name="mbedTLS/library/ripemd160.c" />
+        <file file_name="mbedTLS/library/rsa.c" />
+        <file file_name="mbedTLS/library/sha1.c">
+          <configuration Name="Release" build_exclude_from_build="No" />
+        </file>
+        <file file_name="mbedTLS/library/sha256.c">
+          <configuration Name="Release" build_exclude_from_build="No" />
+        </file>
+        <file file_name="mbedTLS/library/sha512.c" />
+        <file file_name="mbedTLS/library/ssl_cache.c" />
+        <file file_name="mbedTLS/library/ssl_ciphersuites.c" />
+        <file file_name="mbedTLS/library/ssl_cli.c" />
+        <file file_name="mbedTLS/library/ssl_cookie.c" />
+        <file file_name="mbedTLS/library/ssl_srv.c" />
+        <file file_name="mbedTLS/library/ssl_ticket.c" />
+        <file file_name="mbedTLS/library/ssl_tls.c" />
+        <file file_name="mbedTLS/library/threading.c" />
+        <file file_name="mbedTLS/library/timing.c" />
+        <file file_name="mbedTLS/library/version.c" />
+        <file file_name="mbedTLS/library/version_features.c" />
+        <file file_name="mbedTLS/library/x509.c" />
+        <file file_name="mbedTLS/library/x509_create.c" />
+        <file file_name="mbedTLS/library/x509_crl.c" />
+        <file file_name="mbedTLS/library/x509_crt.c" />
+        <file file_name="mbedTLS/library/x509_csr.c" />
+        <file file_name="mbedTLS/library/x509write_crt.c" />
+        <file file_name="mbedTLS/library/x509write_csr.c" />
+        <file file_name="mbedTLS/library/xtea.c" />
+      </folder>
+    </folder>
+    <configuration
+      Name="Release_Dogma"
+      build_debug_information="No"
+      gcc_debugging_level="Level 1"
+      gcc_optimization_level="Optimize For Size"
+      linker_strip_debug_information="Yes" />
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1"
+    inherited_configurations="Release_Dogma" />
+  <configuration Name="Release_Dogma" hidden="Yes" />
+</solution>
