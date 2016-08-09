@@ -1,0 +1,112 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="nrf51822_s130_ble_app_uart" target="8" version="2">
+  <project Name="nrf51822_s130_ble_app_uart">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="nRF51822_xxAC"
+      arm_architecture="v6M"
+      arm_core_type="Cortex-M0"
+      arm_endian="Little"
+      arm_fp_abi="Softfp"
+      arm_fpu_type="None"
+      arm_interwork="No"
+      arm_linker_heap_size="1024"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_simulator_memory_simulation_parameter="ROM;0x00000000;0x00040000;RAM;0x20000000;0x00008000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="nRF51822_xxAC"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="NRF51;__nRF_FAMILY;ARM_MATH_CM0;FLASH_PLACEMENT=1;BLE_STACK_SUPPORT_REQD;BOARD_CUSTOM;BOARD_BLE400;S130;NRF_LOG_USES_UART=1;NRF51;SOFTDEVICE_PRESENT;SWI_DISABLE0;REVERSE_LEDS=1"
+      c_user_include_directories="$(ProjectDir)/CMSIS_4/CMSIS/Include;$(ProjectDir)/Application/user;$(ProjectDir)/Application/config/ble_app_uart_s130_pca10028;$(ProjectDir)/Application/config;$(ProjectDir)/SDK11/components/ble/ble_advertising;$(ProjectDir)/SDK11/components/ble/ble_services/ble_nus;$(ProjectDir)/SDK11/components/ble/common;$(ProjectDir)/SDK11/components/drivers_nrf/common;$(ProjectDir)/SDK11/components/drivers_nrf/config;$(ProjectDir)/SDK11/components/drivers_nrf/delay;$(ProjectDir)/SDK11/components/drivers_nrf/gpiote;$(ProjectDir)/SDK11/components/drivers_nrf/hal;$(ProjectDir)/SDK11/components/drivers_nrf/pstorage;$(ProjectDir)/SDK11/components/drivers_nrf/uart;$(ProjectDir)/SDK11/components/libraries/button;$(ProjectDir)/SDK11/components/libraries/experimental_section_vars;$(ProjectDir)/SDK11/components/libraries/fifo;$(ProjectDir)/SDK11/components/libraries/fstorage;$(ProjectDir)/SDK11/components/libraries/fstorage/config;$(ProjectDir)/SDK11/components/libraries/timer;$(ProjectDir)/SDK11/components/libraries/uart;$(ProjectDir)/SDK11/components/libraries/util;$(ProjectDir)/SDK11/components/softdevice/common/softdevice_handler;$(ProjectDir)/SDK11/components/softdevice/s130/headers;$(ProjectDir)/SDK11/components/softdevice/s130/headers/nrf51;$(ProjectDir)/SDK11/components/toolchain;$(ProjectDir)/SDK11/components/device;$(ProjectDir)/SDK11/examples/bsp;$(ProjectDir)/RTT"
+      debug_register_definition_file="$(ProjectDir)/nrf51_Registers.xml"
+      debug_target_connection="J-Link"
+      gcc_c_language_standard="gnu99"
+      gcc_entry_point="Reset_Handler"
+      linker_memory_map_file="$(ProjectDir)/nRF51822_xxAC_MemoryMap.xml"
+      linker_memory_map_macros="FLASH_START=0x1B000;FLASH_SIZE=0x25000;SRAM_START=0x20002080;SRAM_SIZE=0x5F80"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long"
+      linker_printf_fp_enabled="Yes"
+      linker_scanf_character_group_matching_enabled="Yes"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml"
+      macros="DeviceHeaderFile=$(PackagesDir)/SDK11/components/device/nrf.h;DeviceLibraryIdentifier=M0l;DeviceSystemFile=$(PackagesDir)/SDK11/components/toolchain/system_nrf51.c;DeviceVectorsFile=$(PackagesDir)/SDK11/components/toolchain/SES/nrf51_Vectors.s;DeviceFamily=nRF;Target=nRF51822_xxAC;Placement=Flash;libctl=No"
+      package_dependencies="nRF"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <folder Name="Script Files">
+      <file file_name="nRF_Target.js">
+        <configuration Name="Common" file_type="Reset Script" />
+      </file>
+    </folder>
+    <folder Name="Application">
+      <file file_name="Application/main.c" />
+    </folder>
+    <folder Name="Board_Support">
+      <file file_name="SDK11/examples/bsp/bsp.c" />
+      <file file_name="SDK11/examples/bsp/bsp_btn_ble.c" />
+    </folder>
+    <folder Name="nRF5x">
+      <folder Name="nRF_BLE">
+        <file file_name="SDK11/components/ble/common/ble_advdata.c" />
+        <file file_name="SDK11/components/ble/ble_advertising/ble_advertising.c" />
+        <file file_name="SDK11/components/ble/common/ble_conn_params.c" />
+        <file file_name="SDK11/components/ble/ble_services/ble_nus/ble_nus.c" />
+        <file file_name="SDK11/components/ble/common/ble_srv_common.c" />
+      </folder>
+      <folder Name="nRF_Drivers">
+        <file file_name="SDK11/components/drivers_nrf/uart/nrf_drv_uart.c" />
+        <file file_name="SDK11/components/libraries/uart/app_uart_fifo.c" />
+        <file file_name="SDK11/components/drivers_nrf/delay/nrf_delay.c" />
+        <file file_name="SDK11/components/drivers_nrf/common/nrf_drv_common.c" />
+        <file file_name="SDK11/components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+        <file file_name="SDK11/components/drivers_nrf/pstorage/pstorage.c" />
+      </folder>
+      <folder Name="nRF_Libraries">
+        <file file_name="SDK11/components/libraries/button/app_button.c" />
+        <file file_name="SDK11/components/libraries/util/app_error.c" />
+        <file file_name="SDK11/components/libraries/util/app_error_weak.c" />
+        <file file_name="SDK11/components/libraries/fifo/app_fifo.c" />
+        <file file_name="SDK11/components/libraries/timer/app_timer.c" />
+        <file file_name="SDK11/components/libraries/util/app_util_platform.c" />
+        <file file_name="SDK11/components/libraries/fstorage/fstorage.c" />
+        <file file_name="SDK11/components/libraries/util/nrf_assert.c" />
+        <file file_name="SDK11/components/libraries/util/nrf_log.c" />
+        <file file_name="SDK11/components/libraries/uart/retarget.c">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <folder Name="nRF_Segger_RTT">
+        <file file_name="RTT/SEGGER_RTT.c" />
+        <file file_name="RTT/SEGGER_RTT.h" />
+        <file file_name="RTT/SEGGER_RTT_Conf.h" />
+        <file file_name="RTT/SEGGER_RTT_SES.c" />
+      </folder>
+      <folder Name="nRF_SoftDevice">
+        <file file_name="SDK11/components/softdevice/common/softdevice_handler/softdevice_handler.c" />
+        <file file_name="SDK11/components/softdevice/s130/doc/s130_nrf51_2.0.0_licence_agreement.txt" />
+      </folder>
+    </folder>
+    <folder Name="Device">
+      <file file_name="SDK11/components/toolchain/SES/nRF_Startup.s" />
+      <file file_name="SDK11/components/toolchain/SES/nrf51_Vectors.s" />
+      <file file_name="SDK11/components/toolchain/SES/thumb_crt0.s" />
+      <file file_name="SDK11/components/toolchain/system_nrf51.c" />
+      <file file_name="SDK11/components/toolchain/system_nrf51.h" />
+    </folder>
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1" />
+</solution>

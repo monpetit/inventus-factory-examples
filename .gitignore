@@ -31,3 +31,9 @@
 # Other files
 *.zip
 
+# User definitions
+nrf51822_s130_ble_app_uart/Output
+*.emSession
+*.jlink
+*.bak
+*~
